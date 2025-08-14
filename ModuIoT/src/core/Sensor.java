@@ -1,5 +1,7 @@
 package core;
 
-public interface Sensor extends Dispositivo{
+import observer.Observavel;
+
+public interface Sensor extends Dispositivo, Observavel{
     String lerDados();
 }
