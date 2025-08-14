@@ -1,16 +1,7 @@
 package observer;
 
 public interface Observavel {
-    /*public void addObservador(Observador observador) {
-
-    }
-
-    public void removerObservador(Observador obs) {
-
-    }
-
-    public void notificarObservadores() {
-
-    }*/
-
+    public void adicionarObservador(Observador observador);
+    public void removerObservador(Observador observador);
+    public void notificarObservadores(String mensagem);
 }
