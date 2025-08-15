@@ -1,8 +1,7 @@
-package devices;
+package core;
 
 import java.util.ArrayList;
 import java.util.List;
-import core.Sensor;
 import observer.Observador;
 
 public abstract class SensorBase implements Sensor {

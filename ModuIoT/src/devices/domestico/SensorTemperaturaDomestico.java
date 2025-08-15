@@ -1,6 +1,6 @@
 package devices.domestico;
 
-import devices.SensorBase;
+import core.SensorBase;
 
 public class SensorTemperaturaDomestico extends SensorBase {
     public String getTipo() {
@@ -8,7 +8,7 @@ public class SensorTemperaturaDomestico extends SensorBase {
     }
 
     public double lerDados() {
-        return 22.5;
+        return 27;
     }
 
 }

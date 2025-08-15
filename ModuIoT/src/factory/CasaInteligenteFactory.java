@@ -2,7 +2,6 @@ package factory;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import core.Atuador;
 import core.Sensor;
 import devices.domestico.AtuadorAr;

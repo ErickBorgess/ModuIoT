@@ -1,6 +1,6 @@
 package devices.domestico;
 
-import devices.SensorBase;
+import core.SensorBase;
 
 public class SensorLuminosidadeDomestico extends SensorBase {
     public String getTipo() {

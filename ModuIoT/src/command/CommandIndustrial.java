@@ -27,6 +27,10 @@ public class CommandIndustrial implements Command {
         for (Atuador a : atuadores) {
             if (a.getTipo().toLowerCase().contains("refrigeracao") && temperatura > 100) {
                 a.executarAcao("Ligar");
+                System.out.println("[COMMAND] Temperatura do motor alta! - " + a.getTipo() + " LIGADO.");
+            }else {
+                a.executarAcao("Desligar");
+                System.out.println("[COMMAND] Temperatura do motor segura ("+temperatura+") - " + a.getTipo() + " DESLIGADO.");
             }
         }
     }

@@ -1,6 +1,6 @@
 package devices.industrial;
 
-import devices.SensorBase;
+import core.SensorBase;
 
 public class SensorTemperaturaIndustrial extends SensorBase{
     public String getTipo() {
@@ -8,7 +8,7 @@ public class SensorTemperaturaIndustrial extends SensorBase{
     }
 
     public double lerDados() {
-        return 56.7;
+        return 98.6;
     }
 
 }

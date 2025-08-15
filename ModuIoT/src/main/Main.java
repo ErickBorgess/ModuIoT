@@ -1,32 +1,35 @@
 package main;
 
 import java.util.List;
-
-import command.Command;
-import command.CommandDomestico;
-import command.CommandIndustrial;
+import command.*;
+import display.*;
+import factory.*;
 import core.Atuador;
 import core.Sensor;
-import factory.CasaInteligenteFactory;
-import factory.DispositivoFactory;
-import factory.IndustrialFactory;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         //Domestico
-        DispositivoFactory factoryCasa = new CasaInteligenteFactory();
-        List<Sensor> sensoresDomesticos = factoryCasa.criarSensores();
-        List<Atuador> atuadoresDomesticos = factoryCasa.criarAtuadores();
+        DispositivoFactory fCasa = new CasaInteligenteFactory();
+        List<Sensor> sensoresCasa = fCasa.criarSensores();
+        List<Atuador> atuadoresCasa = fCasa.criarAtuadores();
 
-        Command comandoDomestico = new CommandDomestico(sensoresDomesticos, atuadoresDomesticos);
-        comandoDomestico.executar();
+        Command cmdCasa = new CommandDomestico(sensoresCasa, atuadoresCasa);
+        cmdCasa.executar(); //decide ligar/desligar baseado em Lux/Temp
 
         //Industrial
-        DispositivoFactory factoryIndustria = new IndustrialFactory();
-        List<Sensor> sensoresIndustria = factoryIndustria.criarSensores();
-        List<Atuador> atuadoresIndustria = factoryIndustria.criarAtuadores();
+        DispositivoFactory fInd = new IndustrialFactory();
+        List<Sensor> sensoresInd = fInd.criarSensores();
+        List<Atuador> atuadoresInd = fInd.criarAtuadores();
 
-        Command comandoIndustrial = new CommandIndustrial(sensoresIndustria, atuadoresIndustria);
-        comandoIndustrial.executar();
+        Command cmdInd = new CommandIndustrial(sensoresInd, atuadoresInd);
+        cmdInd.executar(); //decide ligar refrigeração baseado na Temp
+
+        //Displays
+        Display displayCasaClaro = new TemaClaroDisplay(new DisplayBasico());
+        displayCasaClaro.mostrar(sensoresCasa, atuadoresCasa);
+
+        Display displayIndEscuro = new TemaEscuroDisplay(new DisplayBasico());
+        displayIndEscuro.mostrar(sensoresInd, atuadoresInd);
     }
 }

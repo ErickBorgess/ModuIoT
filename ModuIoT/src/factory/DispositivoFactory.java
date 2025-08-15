@@ -1,7 +1,6 @@
 package factory;
 
 import java.util.List;
-
 import core.Atuador;
 import core.Sensor;
 

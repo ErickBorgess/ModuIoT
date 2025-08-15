@@ -17,24 +17,37 @@ public class CommandDomestico implements Command {
         double temperatura = 0;
         double luminosidade = 0;
 
-        //Leitura dos sensores
+        // Leitura dos sensores
         for (Sensor s : sensores) {
-            if(s.getTipo().toLowerCase().contains("temperatura")) {
+            if (s.getTipo().toLowerCase().contains("temperatura")) {
                 temperatura = s.lerDados();
-            }else if (s.getTipo().toLowerCase().contains("luminosidade")) {
+            } else if (s.getTipo().toLowerCase().contains("luminosidade")) {
                 luminosidade = s.lerDados();
             }
         }
 
-        //Atuação com regras
+        // Atuação com regras
         for (Atuador a : atuadores) {
-            if(a.getTipo().toLowerCase().contains("ar") && temperatura > 25) {
-                a.executarAcao("Ligar");
-            }else if(a.getTipo().toLowerCase().contains("luz") && luminosidade < 220) {
-                a.executarAcao("Ligar");
+            String tipo = a.getTipo().toLowerCase();
+
+            if (tipo.contains("ar")) {
+                if (temperatura > 25) {
+                    a.executarAcao("Ligar");
+                    System.out.println("[COMMAND] Temperatura acima de 25°C! - " + a.getTipo() + " LIGADO.");
+                } else {
+                    a.executarAcao("Desligar");
+                    System.out.println("[COMMAND] Temperatura abaixo de 25°C - " + a.getTipo() + " DESLIGADO.");
+                }
+            } else if (tipo.contains("luz")) {
+                if (luminosidade < 220) {
+                    a.executarAcao("Ligar");
+                    System.out.println("[COMMAND] Luminosidade baixa! - " + a.getTipo() + " LIGADO.");
+                } else {
+                    a.executarAcao("Desligar");
+                    System.out.println("[COMMAND] Luminosidade ok - " + a.getTipo() + " DESLIGADO.");
+                }
             }
         }
-
     }
 
 }
