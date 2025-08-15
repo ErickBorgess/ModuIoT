@@ -1,10 +1,8 @@
-# Sistema de Sensores com Padrões de Projeto GOF
-
-Este projeto é uma refatoração de um sistema legado de sensores embarcados em uma linha de produção inteligente (IoT), utilizando os padrões de projeto GOF com foco em modularidade, reusabilidade e manutenção.
+# Gerenciamento de Dispositivos Inteligentes - ModuIoT
 
 ## Objetivo 
 
-Aplicar padrões de criação e padõres estruturais para tornar o sistema mais flexível, desacoplado e pronto para expansão, com uso de sensores de temperatura, umidade e luminosidade.
+Projetar e desenvolver um sistema modular para gerenciamento de dispositivos inteligentes (ex: lâmpadas, sensores, atuadores)aplicando múltiplos padrões GOF (Criação, Estruturais, Comportamentais) e princípios SOLID, com foco em baixo acoplamento, alta coesão e extensibilidade.
 
 ## 🔧 Padrões Aplicados
 
@@ -12,13 +10,12 @@ Aplicar padrões de criação e padõres estruturais para tornar o sistema mais 
 ### ✅ Singleton
 ### ✅ Composite + Decorator
 ### ✅ Observer
-### ✅ Strategy
 
 ## 🖥️ Como Executar
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-projeto.git
+   git clone https://github.com/ErickBorgess/ModuIoT
 
 2. Compile os arquivos .java:
 
