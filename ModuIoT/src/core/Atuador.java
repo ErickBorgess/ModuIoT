@@ -1,7 +1,5 @@
 package core;
 
-import observer.Observavel;
-
-public interface Atuador extends Dispositivo, Observavel {
+public interface Atuador extends Dispositivo {
     void executarAcao(String acao);
 }

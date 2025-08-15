@@ -7,11 +7,8 @@ public class SensorTemperaturaDomestico extends SensorBase {
         return "Sensor de Temperatura Doméstico";
     }
 
-    public double lerTemperatura() { //migrar para lerDados()
+    public double lerDados() {
         return 22.5;
     }
 
-    public String lerDados() { //trecho só para teste, to-do display de informações
-        return "[SENSOR]Temperatura do Ambiente: "+lerTemperatura()+"°C";
-    }
 }

@@ -7,11 +7,8 @@ public class SensorTemperaturaIndustrial extends SensorBase{
         return "Sensor de Temperatura Industrial";
     }
 
-    public double lerTemperatura() { //migrar para lerDados()
+    public double lerDados() {
         return 56.7;
     }
 
-    public String lerDados() { //trecho só para teste, to-do display de informações
-        return "[SENSOR]Temperatura da Máquina: "+lerTemperatura()+"";
-    }
 }
